@@ -15,7 +15,7 @@ opt.smartcase = true
 
 opt.termguicolors = true
 opt.background = "dark"
--- opt.signcolumn = "yes"
+opt.signcolumn = "yes"
 
 opt.backspace = "indent,eol,start"
 opt.clipboard:append("unnamedplus")
@@ -25,4 +25,4 @@ opt.splitbelow = true
 
 opt.iskeyword:append("-")
 
-vim.api.nvim_command("set noswapfile") 
+vim.api.nvim_command("set noswapfile")
