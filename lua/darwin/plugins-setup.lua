@@ -99,6 +99,7 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+	use("tpope/vim-fugitive") -- show line modifications on left hand side
 
 	use({
 		"NTBBloodbath/doom-one.nvim",
@@ -143,9 +144,8 @@ return packer.startup(function(use)
 		tag = "*",
 		config = function()
 			require("toggleterm").setup({
-				size = 20,
-				open_mapping = [[<c-`>]],
-				direction = "float",
+				open_mapping = [[<C-`>]],
+				direction = "float", -- | 'vertical' | 'window' | 'float'
 			})
 		end,
 	})
