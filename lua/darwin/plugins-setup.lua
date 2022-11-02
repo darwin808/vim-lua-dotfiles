@@ -99,6 +99,29 @@ return packer.startup(function(use)
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 	use("tpope/vim-fugitive") -- show line modifications on left hand side
+	use({
+		"APZelos/blamer.nvim",
+		setup = function()
+			vim.g.blamer_enabled = 1
+			vim.g.blamer_date_format = "%b %e, %Y"
+			vim.g.blamer_delay = 50
+		end,
+	})
+
+	use({
+		"akinsho/git-conflict.nvim",
+		tag = "*",
+		config = function()
+			require("git-conflict").setup({
+				default_mappings = true,
+				disable_diagnostics = false,
+				highlights = {
+					incoming = "DiffText",
+					current = "DiffAdd",
+				},
+			})
+		end,
+	})
 
 	use({
 		"NTBBloodbath/doom-one.nvim",
